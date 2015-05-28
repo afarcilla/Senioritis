@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Senioritis</string>
+    <color name = "bg_color">#263038</color>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_enter">EnterActivity</string>
+    <string name="welcome">Welcome to Senioritis.</string>
+    <string name="prompt">Mind telling us your name?</string>
+</resources>
