@@ -4,32 +4,35 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.ucsb.cs.cs185.afarcilla.senioritis.EnterActivity">
+    tools:context=".EnterActivity">
 
-    <TextView android:text="Hi there!" android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/skipButton"
+        android:textColor="#1d9fb5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:text="skip >>"
+        android:onClick="skip"/>
+
+    <TextView android:text="w e l c o m e" android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="sans-serif-thin"
-    android:id="@+id/textView"
+    android:id="@+id/welcome"
     android:textSize="35sp"
     android:layout_marginTop="104dp"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true" />
 
-    <TextView android:text="@string/welcome" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-thin"
-        android:id="@+id/textView2"
-        android:textSize="20sp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
-    <TextView android:text="@string/prompt" android:layout_width="wrap_content"
+    <TextView android:text="let's set you up, shall we?" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-thin"
         android:textColor="#1d9fb5"
-        android:id="@+id/textView3"
+        android:id="@+id/setup"
         android:textSize="20sp"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/welcome"
         android:layout_centerHorizontal="true" />
 
     <RelativeLayout
@@ -41,15 +44,15 @@
             android:layout_height="1dp"
             android:background="#9da5a8" />
         <Button
-            android:id="@+id/BtnColorPickerStart"
-            android:textColor="#1d9fb5"
+            android:id="@+id/enterBtn"
+            android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="@android:color/transparent"
+            android:background="#1d9fb5"
             android:onClick="startClick"
-            android:text="s t a r t"
+            android:text="e n t e r"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
@@ -57,12 +60,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="enter your name"
-        android:textStyle="bold|normal"
+        android:hint="first name"
+        android:textStyle="normal"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp" />
+        android:id="@+id/name"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/gpa"
+        android:layout_alignStart="@+id/gpa" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="current gpa"
+        android:textStyle="normal"
+        android:ems="10"
+        android:id="@+id/gpa"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="completed units"
+        android:textStyle="normal"
+        android:ems="10"
+        android:id="@+id/units"
+        android:layout_below="@+id/gpa"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

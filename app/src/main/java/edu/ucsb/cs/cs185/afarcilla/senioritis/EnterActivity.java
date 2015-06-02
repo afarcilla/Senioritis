@@ -1,28 +1,31 @@
 package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Toast;
 
 
-public class EnterActivity extends Activity {
+public class EnterActivity extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //remove title bar
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_enter);
 
     }
 
     public void startClick(View v){
         Toast.makeText(this, "Thanks!", Toast.LENGTH_SHORT).show();
+        /* Would need to add file stuff here */
+    }
+
+    public void skip(View v){
+        startActivity(new Intent(EnterActivity.this, MainActivity.class));
+        finish();
     }
 
 

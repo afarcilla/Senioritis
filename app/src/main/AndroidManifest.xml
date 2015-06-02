@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".EnterActivity"
-            android:label="@string/title_activity_enter" >
+            android:label="Set Up" >
         </activity>
     </application>
 
