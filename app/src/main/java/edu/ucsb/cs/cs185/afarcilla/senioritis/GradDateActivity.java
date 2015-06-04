@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.IntentCompat;
 import android.view.View;
 import android.widget.DatePicker;
 
@@ -30,13 +31,15 @@ public class GradDateActivity extends Activity {
         prefsEditor.putString("grad_year", Integer.toString(year));
         prefsEditor.commit();
 
-        startActivity(new Intent(GradDateActivity.this, MainActivity.class));
-        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
 
     }
 
     public void skip(View v){
-        startActivity(new Intent(GradDateActivity.this, MainActivity.class));
-        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }
