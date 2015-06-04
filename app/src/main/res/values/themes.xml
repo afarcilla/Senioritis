@@ -12,11 +12,14 @@
     <style name="MyActionBar"
         parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/graphite</item>
-        <item name="android:titleTextStyle">@style/MyActionBarText</item>>
+        <item name="android:titleTextStyle">@style/MyActionBarText</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowActionBar">true</item>
 
         <!-- Support library compatibility -->
         <item name="background">@color/graphite</item>
         <item name="titleTextStyle">@style/MyActionBarText</item>>
+        <item name="windowActionBar">true</item>>
     </style>
 
     <style name="MyActionBarText" parent="@android:style/TextAppearance">
