@@ -9,6 +9,9 @@ import android.support.v4.content.IntentCompat;
 import android.view.View;
 import android.widget.DatePicker;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class GradDateActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,18 @@ public class GradDateActivity extends Activity {
         int day = t_gradDate.getDayOfMonth();
         int month = t_gradDate.getMonth();
         int year =  t_gradDate.getYear();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day);
+
+        Date gradDate = calendar.getTime();
+
         SharedPreferences.Editor prefsEditor = preferences.edit();
-        prefsEditor.putString("grad_day", Integer.toString(day));
+        /*prefsEditor.putString("grad_day", Integer.toString(day));
         prefsEditor.putString("grad_month", Integer.toString(month));
-        prefsEditor.putString("grad_year", Integer.toString(year));
+        prefsEditor.putString("grad_year", Integer.toString(year));*/
+
+        prefsEditor.putLong("gradDate", gradDate.getTime());
         prefsEditor.commit();
 
         Intent intent = new Intent(this, MainActivity.class);
