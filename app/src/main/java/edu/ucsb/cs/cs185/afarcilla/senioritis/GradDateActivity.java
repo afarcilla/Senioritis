@@ -9,14 +9,8 @@ import android.support.v4.content.IntentCompat;
 import android.view.View;
 import android.widget.DatePicker;
 
-<<<<<<< HEAD
 import java.util.Calendar;
 import java.util.Date;
-=======
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
->>>>>>> added days left til grad
 
 public class GradDateActivity extends Activity {
     @Override
@@ -43,11 +37,9 @@ public class GradDateActivity extends Activity {
         prefsEditor.putLong("gradDate", gradDate.getTime());
         prefsEditor.commit();
 
-        long days = getDaysTilGrad(day, month, year);
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.putExtra("daysTilGrad", days);
         startActivity(intent);
     }
 
@@ -55,23 +47,5 @@ public class GradDateActivity extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-    }
-
-    public long getDaysTilGrad(int day, int month, int year) {
-        Calendar gradDate = Calendar.getInstance();
-        Calendar todayDate = Calendar.getInstance();
-
-        gradDate.set(year, month, day);
-
-        long grad = gradDate.getTimeInMillis();
-        long today = todayDate.getTimeInMillis();
-
-        long diff = grad - today;
-        long sec = diff / 1000 ;
-        long minutes = sec / 60 ;
-        long hr = minutes / 60 ;
-        long days = hr / 24 ;
-
-        return days;
     }
 }
