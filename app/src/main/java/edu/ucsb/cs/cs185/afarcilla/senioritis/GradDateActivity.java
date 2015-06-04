@@ -17,7 +17,6 @@ public class GradDateActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graddate);
-
     }
 
     public void startClick(View v){
@@ -31,14 +30,9 @@ public class GradDateActivity extends Activity {
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day);
-
         Date gradDate = calendar.getTime();
 
         SharedPreferences.Editor prefsEditor = preferences.edit();
-        /*prefsEditor.putString("grad_day", Integer.toString(day));
-        prefsEditor.putString("grad_month", Integer.toString(month));
-        prefsEditor.putString("grad_year", Integer.toString(year));*/
-
         prefsEditor.putLong("gradDate", gradDate.getTime());
         prefsEditor.commit();
 
