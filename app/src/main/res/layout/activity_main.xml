@@ -9,7 +9,7 @@
     <TextView android:text="no classes added." android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/empty"
-        android:textColor="#9da5a8"
+        android:textColor="@color/teal"
         android:textSize="50sp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />

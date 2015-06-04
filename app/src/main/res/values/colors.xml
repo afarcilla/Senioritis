@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="teal" type="color">#1d9fb5</item>
+    <item name="graphite" type="color">#263038</item>
+</resources>
