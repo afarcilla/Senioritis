@@ -34,16 +34,26 @@
             android:paddingLeft="100dp"/>
     </android.support.v7.widget.Toolbar>
 
-    <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:tint="@android:color/white"
-        android:src="@android:drawable/ic_input_add"
-        fab:fab_colorNormal="@color/teal"
-        fab:fab_colorPressed="@color/teal"
-/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:tint="@android:color/white"
+            android:src="@android:drawable/ic_input_add"
+            fab:fab_colorNormal="@color/teal"
+            fab:fab_colorPressed="@color/teal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp" />
+    </RelativeLayout>>
 
     <TextView android:text="no classes added" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,3 +64,4 @@
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
+
