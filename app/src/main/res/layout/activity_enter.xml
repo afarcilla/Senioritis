@@ -52,7 +52,7 @@
             android:layout_alignParentTop="true"
             android:background="#1d9fb5"
             android:onClick="startClick"
-            android:text="e n t e r"
+            android:text="n e x t"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
@@ -89,5 +89,6 @@
         android:id="@+id/units"
         android:layout_below="@+id/gpa"
         android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

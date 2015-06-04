@@ -9,22 +9,18 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class EnterActivity extends Activity{
-
+public class GradDateActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter);
+        setContentView(R.layout.activity_graddate);
 
     }
 
     public void startClick(View v){
         Toast.makeText(this, "Thanks!", Toast.LENGTH_SHORT).show();
         /* Would need to add file stuff here */
-    }
-
-    public void skip(View v){
-        startActivity(new Intent(EnterActivity.this, GradDateActivity.class));
+        startActivity(new Intent(GradDateActivity.this, MainActivity.class));
         finish();
     }
 

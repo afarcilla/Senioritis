@@ -24,6 +24,10 @@
             android:name=".EnterActivity"
             android:label="Set Up" >
         </activity>
+        <activity
+            android:name=".GradDateActivity"
+            android:label="Set Up" >
+        </activity>
     </application>
 
 </manifest>
