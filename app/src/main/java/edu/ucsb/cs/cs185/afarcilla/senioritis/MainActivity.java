@@ -2,6 +2,7 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
 import android.app.DialogFragment;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         else if(days < 0 && gradDate != 0){
             daysLeft= "ended";
             text.setTextColor(getResources().getColor(R.color.light_pink));
+            text.setTypeface(null, Typeface.BOLD);
         }
 
         text.setText(daysLeft);

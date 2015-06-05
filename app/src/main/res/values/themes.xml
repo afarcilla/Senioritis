@@ -24,6 +24,7 @@
 
     <style name="MyActionBarText" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/teal</item>
+        <item name="android:textSize">20dp</item>>
 
     </style>
 </resources>
