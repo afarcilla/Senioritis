@@ -2,6 +2,7 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
 import android.content.SharedPreferences;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,32 +37,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setDaysLeftView(){
-        String daysLeft;
 
         //get current date
         Calendar c = Calendar.getInstance();
-        int day = c.get(Calendar.DAY_OF_MONTH),
-                month = c.get(Calendar.MONTH),
-                year = c.get(Calendar.YEAR);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(year, month, day);
-        Date currentDate = calendar.getTime();
-        long current = currentDate.getTime();
+        long current = (c.getTime()).getTime();
 
         //get grad date
         SharedPreferences shared = getSharedPreferences(getString(R.string.preference_file_key),
                 MODE_PRIVATE);
-        long gradDateLong = (shared.getLong("gradDate", 0));
+        long gradDate = (shared.getLong("gradDate", 0));
 
         //calculate days left
-        long diff = gradDateLong - current;
-        long days = diff / (24 * 60 * 60 * 1000);
+        long days = (gradDate - current) / (24 * 60 * 60 * 1000);
+        String daysLeft = String.valueOf(days);
 
         //set textView
         TextView text = (TextView) findViewById(R.id.daysleft);
-        daysLeft = (gradDateLong == 0) ? "?" : String.valueOf(days);
-        text.setText(String.valueOf(daysLeft));
+
+        if(gradDate == 0){daysLeft = "?";}
+        else if(days < 0 && gradDate != 0){
+            daysLeft= "ended";
+            text.setTextColor(getResources().getColor(R.color.light_pink));
+        }
+
+        text.setText(daysLeft);
     }
 
 }
