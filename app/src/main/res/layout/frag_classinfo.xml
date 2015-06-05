@@ -1,11 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:text="@string/class_info"
-        />
+        android:id="@+id/classinfo"
+        android:textSize="20dp"/>
 
-</RelativeLayout>
+    //Course title
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/coursetitle"
+            android:text="Course Title:"
+            android:gravity="bottom"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"/>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/title"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        //Units
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/units"
+            android:text="Units:"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="bottom"
+            android:padding="10dp"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="text"
+            android:ems="2"
+            android:id="@+id/numunits"
+            android:padding="10dp"/>
+
+        //Grade Desired
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desiredgrade"
+            android:text="Grade Desired:"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="bottom"
+            android:padding="10dp"/>
+        <Spinner
+            android:id="@+id/grades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/grade_array"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/breakdown"
+        android:id="@+id/breakdown"
+        android:textSize="20dp"
+        android:paddingTop="10dp"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+    //Grade breakdown labels
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/homework"
+                android:text="Homework:"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="bottom"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/midterm"
+                android:text="Midterm:"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="bottom"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/finalexam"
+                android:text="Final:"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="bottom"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/projects"
+                android:text="Projects:"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="bottom"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/other"
+                android:text="Other:"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="bottom"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    //Grade breakdown percentages
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:inputType="text"
+                    android:ems="4"
+                    android:id="@+id/hwpercent"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="bottom"
+                    android:padding="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:inputType="text"
+                    android:ems="4"
+                    android:id="@+id/midpercent"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="bottom"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:inputType="text"
+                    android:ems="4"
+                    android:id="@+id/finalpercent"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="bottom"
+                    android:padding="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:inputType="text"
+                    android:ems="4"
+                    android:id="@+id/projpercent"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="bottom"
+                    android:padding="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:inputType="text"
+                    android:ems="4"
+                    android:id="@+id/othpercent"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="bottom"
+                    android:padding="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

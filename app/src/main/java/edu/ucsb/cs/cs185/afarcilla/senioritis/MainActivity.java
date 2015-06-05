@@ -1,7 +1,6 @@
 package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
 import android.app.DialogFragment;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,12 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.melnykov.fab.FloatingActionButton;
-
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
