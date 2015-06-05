@@ -40,13 +40,12 @@ public class SplashScreen extends Activity {
                 finally {
                     //Check preferences
                     SharedPreferences preferences = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE);
-                    String value = preferences.getString("firstRun", "true");
-                    if (value.equals("true")) {
-                        // the key does not exist, first time opening app
+                    if(preferences.getBoolean("firstRun", true)){
+                        //first time opening app
                         startActivity(new Intent(SplashScreen.this, EnterActivity.class));
-
-                    } else {
-                        // they key exists, so load main activity
+                    }
+                    else {
+                        // already loaded at least once before, load main activity
                         startActivity(new Intent(SplashScreen.this, MainActivity.class));
                     }
                     finish();

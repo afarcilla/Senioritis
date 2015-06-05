@@ -54,7 +54,6 @@
         android:fontFamily="sans-serif-thin"
         android:id="@+id/termEnd"
         android:textColor="#000000"
-        android:textStyle="bold|normal"
         android:textSize="20sp"
         android:layout_below="@+id/skipButton"
         android:layout_centerHorizontal="true" />

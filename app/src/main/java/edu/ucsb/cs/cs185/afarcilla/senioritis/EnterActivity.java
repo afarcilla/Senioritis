@@ -33,16 +33,16 @@ public class EnterActivity extends Activity{
         String gpa = t_gpa.getText().toString();
         String units = t_units.getText().toString();
 
-        if(name.equals("") ||
-                gpa.equals("") ||
-                units.equals("")){
-            Toast.makeText(this, "missing fields", Toast.LENGTH_LONG).show();
-        }
+        if(name.equals("")  ||
+           gpa.equals("")   ||
+           units.equals(""))
+                Toast.makeText(this, "missing fields", Toast.LENGTH_LONG).show();
         else{
             SharedPreferences.Editor prefsEditor = preferences.edit();
             prefsEditor.putString("name", name);
             prefsEditor.putString("gpa", gpa);
             prefsEditor.putString("units", units);
+            prefsEditor.putBoolean("firstRun", false);
             prefsEditor.commit();
 
             startActivity(new Intent(EnterActivity.this, GradDateActivity.class));
