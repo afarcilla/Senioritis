@@ -1,23 +1,26 @@
 package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
+import android.app.DialogFragment;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import com.melnykov.fab.FloatingActionButton;
+
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         setDaysLeftView();
     }
@@ -62,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         text.setText(daysLeft);
+    }
+
+    public void addClass(View v) {
+        DialogFragment newFragment = new TextEntryFragment();
+        newFragment.show(getFragmentManager(), "textEntry");
     }
 
 }
