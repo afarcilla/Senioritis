@@ -22,13 +22,13 @@ public class MainActivity extends FragmentActivity {
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
         mTabHost.addTab(
-                mTabHost.newTabSpec("Home").setIndicator("", getResources().getDrawable(R.drawable.info5)),
+                mTabHost.newTabSpec("Home").setIndicator("", getResources().getDrawable(R.drawable.home60)),
                 HomeTab.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("Bucket List").setIndicator("", getResources().getDrawable(R.drawable.info5)),
+                mTabHost.newTabSpec("Bucket List").setIndicator("", getResources().getDrawable(R.drawable.list18)),
                 BucketListTab.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("Profile").setIndicator("", getResources().getDrawable(R.drawable.identification28)),
+                mTabHost.newTabSpec("Profile").setIndicator("", getResources().getDrawable(R.drawable.users86)),
                 ProfileTab.class, null);
 
     }
