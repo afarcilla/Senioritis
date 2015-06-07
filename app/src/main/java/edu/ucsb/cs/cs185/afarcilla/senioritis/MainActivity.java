@@ -50,7 +50,12 @@ public class MainActivity extends FragmentActivity {
 
     public void addClass(View v) {
         DialogFragment newFragment = new TextEntryFragment();
-        newFragment.show(getFragmentManager(), "textEntry");
+        newFragment.show(getFragmentManager(), "addClass");
+    }
+
+    public void addActivity(View v) {
+        DialogFragment newFragment = new ActivityEntryFragment();
+        newFragment.show(getFragmentManager(), "addActivity");
     }
 
     public void startHomeInfo(View v){

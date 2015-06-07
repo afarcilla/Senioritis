@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Activities Info"
+        android:id="@+id/classinfo"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/activitiesTitle"
+            android:text="Title:"
+            android:gravity="bottom"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"/>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/title"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        //Units
+
+        //Grade Desired
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desiredgrade"
+            android:text="Grade Desired:"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="bottom"
+            android:padding="10dp"/>
+        <Spinner
+            android:id="@+id/grades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/grade_array"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:background="@color/light_pink"
+            android:text="c a n c e l"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:background="@color/teal"
+            android:text="e n t e r"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+</LinearLayout>
