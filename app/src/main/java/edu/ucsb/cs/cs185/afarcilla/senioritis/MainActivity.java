@@ -17,8 +17,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
 
-
-
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
@@ -49,10 +47,24 @@ public class MainActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     public void addClass(View v) {
         DialogFragment newFragment = new TextEntryFragment();
         newFragment.show(getFragmentManager(), "textEntry");
+    }
+
+    public void startHomeInfo(View v){
+        DialogFragment newFragment = new InfoHomeFragment();
+        newFragment.show(getFragmentManager(), "homeInfoScreen");
+    }
+
+    public void startBucketListInfo(View v){
+        DialogFragment newFragment = new InfoBucketListFragment();
+        newFragment.show(getFragmentManager(), "bucketListInfoScreen");
+    }
+
+    public void startProfileInfo(View v){
+        DialogFragment newFragment = new InfoProfileFragment();
+        newFragment.show(getFragmentManager(), "profileInfoScreen");
     }
 
 }

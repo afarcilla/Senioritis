@@ -54,4 +54,5 @@ public class HomeTab extends Fragment {
 
         text.setText(daysLeft);
     }
+
 }

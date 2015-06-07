@@ -23,9 +23,7 @@ public class BucketListTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bucket_list_layout, container, false);
-
         setDaysLeftView(v);
-
         return v;
     }
 
