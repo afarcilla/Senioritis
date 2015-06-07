@@ -35,7 +35,7 @@ public class HomeTab extends Fragment {
         long current = (c.getTime()).getTime();
 
         //get grad date
-        SharedPreferences preferences = this.getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
+        SharedPreferences preferences = this.getActivity().getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         long gradDate = (preferences.getLong("gradDate", 0));
 
         //calculate days left
