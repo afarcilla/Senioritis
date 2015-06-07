@@ -4,6 +4,7 @@ import android.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,9 @@ public class MainActivity extends FragmentActivity {
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
+        View homeIcon = LayoutInflater.from(MainActivity.this).inflate(R.layout.home_icon,null);
+        View profileIcon = LayoutInflater.from(MainActivity.this).inflate(R.layout.profile_icon,null);
+
         mTabHost.addTab(
                 mTabHost.newTabSpec("Home").setIndicator("Home", null),
                 HomeTab.class, null);
@@ -27,7 +31,7 @@ public class MainActivity extends FragmentActivity {
                 mTabHost.newTabSpec("Bucket List").setIndicator("Bucket List", null),
                 BucketListTab.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("Profile").setIndicator("Profile", null),
+                mTabHost.newTabSpec("Profile").setIndicator(profileIcon),
                 ProfileTab.class, null);
 
     }
