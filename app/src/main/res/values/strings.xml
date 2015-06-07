@@ -13,11 +13,11 @@
     <string name="breakdown"><u><b>Breakdown</b></u></string>
     <string name="home_instructions">To add a class, tap on the add button on the bottom right of the screen.
 You will then be prompted to fill in class information.
-After tapping “DONE,” your class will be added to the screen and you will be able to add/change assignments.</string>
+After tapping “enter,” your class will be added to the screen and you will be able to add/change assignments.</string>
 
     <string name="bucket_list_instructions">To add an activity to your bucket list, tap on the add button on the bottom right of the screen.
 You will then be prompted to fill in the activity\'s name and priority level.
-After tapping “DONE,” your activity will be added to the bucket list and you will be able to add/change activities.</string>
+After tapping “enter,” your activity will be added to the bucket list and you will be able to add/change activities.</string>
 
     <string name="profile_instructions">This is your profile summary.</string>
 
