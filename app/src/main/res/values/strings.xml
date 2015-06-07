@@ -11,6 +11,9 @@
     <string name="action_info">info</string>
     <string name="class_info"><u><b>Class Info</b></u></string>
     <string name="breakdown"><u><b>Breakdown</b></u></string>
+    <string name="home_instructions">To add a class, tap on the add button on the bottom right of the screen.
+You will then be prompted to fill in class information.
+After tapping “DONE,” your class will be added to the screen and you will be able to add/change assignments.</string>
 
     <string-array name="grade_array">
         <item>A+</item>
