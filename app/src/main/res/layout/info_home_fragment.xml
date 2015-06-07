@@ -23,6 +23,7 @@
         android:layout_below="@id/textView"
         android:layout_alignParentRight="true"
         android:layout_weight="1"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:onClick="closeHomeInfo"/>
 
 </RelativeLayout>

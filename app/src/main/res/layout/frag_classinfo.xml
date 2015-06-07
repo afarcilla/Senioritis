@@ -287,7 +287,8 @@
             android:text="c a n c e l"
             android:textColor="#ffffff"
             android:layout_weight="1"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:onClick="cancelClassEntry"/>
         <Button
             android:layout_height="wrap_content"
             android:layout_width="0dp"
