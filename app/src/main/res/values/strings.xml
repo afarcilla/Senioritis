@@ -15,6 +15,12 @@
 You will then be prompted to fill in class information.
 After tapping “DONE,” your class will be added to the screen and you will be able to add/change assignments.</string>
 
+    <string name="bucket_list_instructions">To add an activity to your bucket list, tap on the add button on the bottom right of the screen.
+You will then be prompted to fill in the activity\'s name and priority level.
+After tapping “DONE,” your activity will be added to the bucket list and you will be able to add/change activities.</string>
+
+    <string name="profile_instructions">This is your profile summary.</string>
+
     <string-array name="grade_array">
         <item>A+</item>
         <item>A</item>
@@ -29,6 +35,14 @@ After tapping “DONE,” your class will be added to the screen and you will be
         <item>D</item>
         <item>D-</item>
         <item>F</item>
+    </string-array>
+
+    <string-array name="priority_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
 </resources>

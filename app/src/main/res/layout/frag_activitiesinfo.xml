@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/desiredgrade"
-            android:text="Grade Desired:"
+            android:text="Priority:"
             android:textSize="16dp"
             android:layout_gravity="center_vertical"
             android:gravity="bottom"
@@ -59,7 +59,7 @@
             android:id="@+id/grades"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/grade_array"/>
+            android:entries="@array/priority_array"/>
 
     </LinearLayout>
 
@@ -75,7 +75,8 @@
             android:text="c a n c e l"
             android:textColor="#ffffff"
             android:layout_weight="1"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:onClick="cancelActivityEntry"/>
         <Button
             android:layout_height="wrap_content"
             android:layout_width="0dp"

@@ -1,6 +1,8 @@
 package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
 import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
@@ -71,6 +73,36 @@ public class MainActivity extends FragmentActivity {
     public void startProfileInfo(View v){
         DialogFragment newFragment = new InfoProfileFragment();
         newFragment.show(getFragmentManager(), "profileInfoScreen");
+    }
+
+    public void closeHomeInfo(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("homeInfoScreen");
+        getFragmentManager().beginTransaction().remove(f).commit();
+    }
+
+    public void closeBucketListInfo(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("bucketListInfoScreen");
+        getFragmentManager().beginTransaction().remove(f).commit();
+    }
+
+    public void closeProfileInfo(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("profileInfoScreen");
+        getFragmentManager().beginTransaction().remove(f).commit();
+    }
+
+    public void cancelClassEntry(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("addClass");
+        getFragmentManager().beginTransaction().remove(f).commit();
+    }
+
+    public void cancelActivityEntry(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("addActivity");
+        getFragmentManager().beginTransaction().remove(f).commit();
     }
 
 }
