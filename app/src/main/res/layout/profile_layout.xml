@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/bg_color">
 
-            <TextView android:text="S E N I O R I T I S" android:layout_width="wrap_content"
+            <TextView android:text="P R O F I L E" android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/title"
                 android:textColor="#1d9fb5"
@@ -70,32 +70,8 @@
         </android.support.v7.widget.Toolbar>
 
 
-        <com.melnykov.fab.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:tint="@android:color/white"
-            android:src="@android:drawable/ic_input_add"
-            fab:fab_colorNormal="@color/teal"
-            fab:fab_colorPressed="@color/teal"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:onClick="addClass"/>
-
 
     </RelativeLayout>>
 
-    <TextView android:text="no classes added" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/empty"
-        android:textColor="@color/grey"
-        android:textSize="30sp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
