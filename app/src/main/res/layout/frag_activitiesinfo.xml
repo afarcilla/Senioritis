@@ -8,8 +8,9 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Activities Info"
+        android:text="Activity Info"
         android:id="@+id/classinfo"
+        android:paddingBottom="5dp"
         android:textSize="20dp"/>
 
     <RelativeLayout
@@ -17,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:id="@+id/activities"
-        android:layout_below="@+id/classinfo">
+        android:layout_below="@+id/classinfo"
+        android:paddingBottom="10dp">
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -47,18 +49,27 @@
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
         android:layout_below="@+id/activities"
-        android:id="@+id/relativeLayout2">
+        android:id="@+id/relativeLayout2"
+        android:paddingBottom="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prompt"
+            android:text="(1 = not important, 5 = very important)"
+            android:textSize="13dp"
+            android:paddingBottom="0dp"
+            android:padding="10dp"
+            android:textStyle="italic"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/priority"
-            android:text="Priority:"
+            android:text="Importance:"
             android:textSize="16dp"
             android:layout_gravity="center_vertical"
-            android:gravity="bottom"
-            android:padding="10dp"/>
+            android:layout_below="@+id/prompt"/>
         <Spinner
             android:id="@+id/grades"
             android:layout_width="wrap_content"
@@ -75,37 +86,39 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
-        android:layout_below="@+id/activities">
+        android:layout_below="@+id/relativeLayout2">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:background="@color/light_pink"
+                android:text="c a n c e l"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:onClick="cancelActivityEntry"/>
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:background="@color/teal"
+                android:text="e n t e r"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:textAllCaps="false"/>
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="20dp"
-        android:layout_below="@+id/relativeLayout2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:background="@color/light_pink"
-            android:text="c a n c e l"
-            android:textColor="#ffffff"
-            android:layout_weight="1"
-            android:textAllCaps="false"
-            android:onClick="cancelActivityEntry"/>
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:background="@color/teal"
-            android:text="e n t e r"
-            android:textColor="#ffffff"
-            android:layout_weight="1"
-            android:textAllCaps="false"/>
 
-
-    </LinearLayout>
 
 </RelativeLayout>
