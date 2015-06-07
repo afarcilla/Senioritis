@@ -21,17 +21,14 @@ public class MainActivity extends FragmentActivity {
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
-        View homeIcon = LayoutInflater.from(MainActivity.this).inflate(R.layout.home_icon,null);
-        View profileIcon = LayoutInflater.from(MainActivity.this).inflate(R.layout.profile_icon,null);
-
         mTabHost.addTab(
-                mTabHost.newTabSpec("Home").setIndicator("Home", null),
+                mTabHost.newTabSpec("Home").setIndicator("", getResources().getDrawable(R.drawable.info5)),
                 HomeTab.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("Bucket List").setIndicator("Bucket List", null),
+                mTabHost.newTabSpec("Bucket List").setIndicator("", getResources().getDrawable(R.drawable.info5)),
                 BucketListTab.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("Profile").setIndicator(profileIcon),
+                mTabHost.newTabSpec("Profile").setIndicator("", getResources().getDrawable(R.drawable.identification28)),
                 ProfileTab.class, null);
 
     }
