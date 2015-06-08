@@ -3,17 +3,12 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
@@ -110,7 +105,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void editProfile(View v) {
-        DialogFragment newFragment = new EditProfileFragment();
+        DialogFragment newFragment = new ProfileFragment();
         newFragment.show(getFragmentManager(), "editProfile");
     }
 }
