@@ -68,13 +68,190 @@
                 android:textSize="15sp"
                 android:layout_alignLeft="@+id/term"
                 android:layout_gravity="center"/>
+
         </android.support.v7.widget.Toolbar>
 
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/name"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:id="@+id/nametext"
+                android:text="Name"
+                android:gravity="center"/>
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/edit42"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/info"
+            android:layout_below="@+id/name"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/grades"
+                android:id="@+id/grades"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:paddingBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true">
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/unitscompleted"
+                            android:text="Units Completed:"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/currentgpa"
+                            android:text="Current GPA:"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/projectedgpa"
+                            android:text="Projected GPA:"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="15dp"
+                    android:id="@+id/numbers">
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/units"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/current"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/projected"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/date"
+            android:layout_below="@+id/info"
+            android:paddingBottom="30dp"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/graduation"
+                android:id="@+id/graduation"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:paddingBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/endofterm"
+                            android:text="End of Term:"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/enddate"
+                    android:textSize="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="bottom"
+                    android:paddingLeft="40dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
 
 
     </RelativeLayout>
-
-
-
-
 </RelativeLayout>

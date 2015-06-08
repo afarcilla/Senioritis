@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ProfileTab extends Fragment {
 
@@ -52,5 +56,34 @@ public class ProfileTab extends Fragment {
         }
 
         text.setText(daysLeft);
+
+        //set name
+        TextView name = (TextView) v.findViewById(R.id.nametext);
+        String fullName = (preferences.getString("name", "name"));
+        name.setText(fullName);
+        name.setTypeface(null, Typeface.BOLD);
+
+        //set units
+        TextView units = (TextView) v.findViewById(R.id.units);
+        String unitsCompleted = (preferences.getString("units", "0"));
+        units.setText(unitsCompleted);
+
+        //set gpa
+        TextView gpa = (TextView) v.findViewById(R.id.current);
+        String currentGPA = (preferences.getString("gpa", "4.0"));
+        gpa.setText(currentGPA);
+
+        //set projected
+        TextView pGpa = (TextView) v.findViewById(R.id.projected);
+        String projectedGPA = (preferences.getString("pGpa", "4.0"));
+        pGpa.setText(projectedGPA);
+
+        //set grad date
+        TextView grad = (TextView) v.findViewById(R.id.enddate);
+        Long endDate = (preferences.getLong("gradDate", 0));
+        Date date = new Date(endDate);
+        SimpleDateFormat df2 = new SimpleDateFormat("MM/dd/yyyy");
+        String dateText = df2.format(date);
+        grad.setText(dateText);
     }
 }
