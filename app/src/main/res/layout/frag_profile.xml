@@ -71,14 +71,14 @@
                         <EditText
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
-                            android:inputType="text"
+                            android:inputType="numberDecimal"
                             android:ems="4"
                             android:id="@+id/units"
                             android:padding="8dp"/>
                         <EditText
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
-                            android:inputType="text"
+                            android:inputType="numberDecimal"
                             android:ems="4"
                             android:id="@+id/current"
                             android:padding="8dp"/>

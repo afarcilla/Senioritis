@@ -5,10 +5,13 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -28,15 +31,25 @@ public class ProfileFragment extends DialogFragment {
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                EditText title = (EditText) getDialog().findViewById(R.id.title_entry);
-                String courseTitle = title.getText().toString();
+                SharedPreferences preferences = getActivity().getSharedPreferences(
+                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
+                EditText units = (EditText) getDialog().findViewById(R.id.units);
+                EditText current = (EditText) getDialog().findViewById(R.id.current);
 
-                Context context = getActivity().getApplicationContext();
-                CharSequence text = courseTitle;
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                String totalUnits = units.getText().toString();
+                String currentgpa = current.getText().toString();
+
+                SharedPreferences.Editor prefsEditor = preferences.edit();
+                prefsEditor.putString("units", totalUnits);
+                prefsEditor.putString("gpa", currentgpa);
+                prefsEditor.commit();
+
+                TextView unitsMain = (TextView) getActivity().findViewById(R.id.units);
+                TextView gpaMain = (TextView) getActivity().findViewById(R.id.current);
+                unitsMain.setText(totalUnits);
+                gpaMain.setText(currentgpa);
+
             }
         });
 
