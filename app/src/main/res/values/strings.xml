@@ -22,6 +22,7 @@ After tapping “enter,” your activity will be added to the bucket list and yo
     <string name="profile_instructions">This is your profile summary. To edit your preferences, tap on the edit icon next to your name.</string>
     <string name="grades"><u><b>Grades</b></u></string>
     <string name="graduation"><u><b>Graduation</b></u></string>
+    <string name="activity_info"><u><b>Activity Info</b></u></string>
 
     <string-array name="grade_array">
         <item>A+</item>

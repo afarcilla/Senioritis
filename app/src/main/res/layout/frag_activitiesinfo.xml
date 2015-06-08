@@ -8,10 +8,11 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Activity Info"
+        android:text="@string/activity_info"
         android:id="@+id/classinfo"
         android:paddingBottom="5dp"
-        android:textSize="20dp"/>
+        android:textSize="18dp"
+        android:textColor="#000000"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -51,15 +52,6 @@
         android:layout_below="@+id/activities"
         android:id="@+id/relativeLayout2"
         android:paddingBottom="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/prompt"
-            android:text="(1 = not important, 5 = very important)"
-            android:textSize="13dp"
-            android:paddingBottom="0dp"
-            android:padding="10dp"
-            android:textStyle="italic"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,19 +59,86 @@
             android:id="@+id/priority"
             android:text="Importance:"
             android:textSize="16dp"
-            android:layout_gravity="center_vertical"
-            android:layout_below="@+id/prompt"/>
-        <Spinner
-            android:id="@+id/grades"
+            android:padding="10dp"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:max="4"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/priority"/>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/seek"
+            android:layout_below="@+id/seekBar">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:id="@+id/one"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/teal"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="2"
+                android:id="@+id/two"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/one"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/teal"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="3"
+                android:id="@+id/three"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/two"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/teal"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="4"
+                android:id="@+id/four"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/three"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/teal"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="5"
+                android:id="@+id/five"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/four"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/teal"/>
+        </LinearLayout>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/priority_array"
-            android:layout_alignBaseline="@+id/priority"
-            android:layout_toRightOf="@id/priority"/>
+            android:id="@+id/prompt"
+            android:text="(1 = not important, 5 = very important)"
+            android:textSize="13dp"
+            android:paddingTop="10dp"
+            android:textStyle="italic"
+            android:layout_below="@+id/seek"
+            android:layout_centerHorizontal="true" />
 
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>

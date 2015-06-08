@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/casey/Documents/programming/projects/Senioritis/fab_library/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/casey/Documents/programming/projects/Senioritis/fab_library/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/Natasha/AndroidStudioProjects/Senioritis/fab_library/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/Natasha/AndroidStudioProjects/Senioritis/fab_library/src/debug/assets"/></dataSet></merger>

@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:text="@string/class_info"
         android:id="@+id/classinfo"
-        android:textSize="20dp"/>
+        android:textSize="18dp"
+        android:textColor="#000000"/>
 
     //Course title
     <LinearLayout
@@ -52,12 +53,14 @@
             android:textSize="16dp"
             android:layout_gravity="center_vertical"
             android:gravity="bottom"
-            android:padding="10dp"/>
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"/>
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:inputType="text"
-            android:ems="2"
+            android:inputType="numberDecimal"
+            android:ems="3"
             android:id="@+id/numunits"
             android:padding="10dp"/>
 
@@ -70,7 +73,10 @@
             android:textSize="16dp"
             android:layout_gravity="center_vertical"
             android:gravity="bottom"
-            android:padding="10dp"/>
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
         <Spinner
             android:id="@+id/grades"
             android:layout_width="wrap_content"
@@ -84,8 +90,9 @@
         android:layout_width="wrap_content"
         android:text="@string/breakdown"
         android:id="@+id/breakdown"
-        android:textSize="20dp"
-        android:paddingTop="10dp"/>
+        android:textSize="18dp"
+        android:paddingTop="10dp"
+        android:textColor="#000000"/>
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -169,7 +176,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:ems="4"
                     android:id="@+id/hwpercent"
                     android:padding="10dp"/>
@@ -191,7 +198,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:ems="4"
                     android:id="@+id/midpercent"
                     android:padding="10dp"/>
@@ -214,7 +221,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:ems="4"
                     android:id="@+id/finalpercent"
                     android:padding="10dp"/>
@@ -236,7 +243,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:ems="4"
                     android:id="@+id/projpercent"
                     android:padding="10dp"/>
@@ -258,7 +265,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:ems="4"
                     android:id="@+id/othpercent"
                     android:padding="10dp"/>
