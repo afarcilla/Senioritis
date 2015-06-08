@@ -32,7 +32,7 @@
             android:layout_height="fill_parent"
             android:inputType="text"
             android:ems="10"
-            android:id="@+id/title"
+            android:id="@+id/title_entry"
             android:padding="10dp"/>
     </LinearLayout>
 
@@ -275,29 +275,5 @@
     </RelativeLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:background="@color/light_pink"
-            android:text="c a n c e l"
-            android:textColor="#ffffff"
-            android:layout_weight="1"
-            android:textAllCaps="false"
-            android:onClick="cancelClassEntry"/>
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:background="@color/teal"
-            android:text="e n t e r"
-            android:textColor="#ffffff"
-            android:layout_weight="1"
-            android:textAllCaps="false"/>
-
-    </LinearLayout>
 
 </LinearLayout>
