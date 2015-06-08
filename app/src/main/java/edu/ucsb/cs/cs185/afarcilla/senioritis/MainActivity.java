@@ -108,18 +108,9 @@ public class MainActivity extends FragmentActivity {
         Fragment f = fm.findFragmentByTag("addActivity");
         getFragmentManager().beginTransaction().remove(f).commit();
     }
-/*
-    public void submitClassEntry(View v){
-        FragmentManager fm = getFragmentManager();
-        Fragment f = fm.findFragmentByTag("addClass");
-        View view = f.getView();
-        EditText courseTitle = (EditText) .findViewById(R.id.title_entry);
-        String s = courseTitle.getText().toString();
-        Context context = getApplicationContext();
-        CharSequence text = s;
-        int duration = Toast.LENGTH_SHORT;
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }*/
+    public void editProfile(View v) {
+        DialogFragment newFragment = new EditProfileFragment();
+        newFragment.show(getFragmentManager(), "editProfile");
+    }
 }
