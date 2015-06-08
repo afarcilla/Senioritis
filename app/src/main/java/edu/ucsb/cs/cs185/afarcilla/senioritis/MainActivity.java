@@ -96,4 +96,21 @@ public class MainActivity extends FragmentActivity {
         Fragment f = fm.findFragmentByTag("profileInfoScreen");
         getFragmentManager().beginTransaction().remove(f).commit();
     }
+
+    public void cancelClassEntry(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("addClass");
+        getFragmentManager().beginTransaction().remove(f).commit();
+    }
+
+    public void cancelActivityEntry(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("addActivity");
+        getFragmentManager().beginTransaction().remove(f).commit();
+    }
+
+    public void editProfile(View v) {
+        DialogFragment newFragment = new EditProfileFragment();
+        newFragment.show(getFragmentManager(), "editProfile");
+    }
 }

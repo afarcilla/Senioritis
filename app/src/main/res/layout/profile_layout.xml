@@ -92,7 +92,8 @@
                 android:layout_width="wrap_content"
                 android:src="@drawable/edit42"
                 android:paddingLeft="10dp"
-                android:paddingTop="3dp"/>
+                android:paddingTop="3dp"
+                android:onClick="editProfile"/>
         </LinearLayout>
 
         <LinearLayout
