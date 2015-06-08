@@ -30,10 +30,10 @@ public class ActivityEntryFragment extends DialogFragment {
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
                 EditText title = (EditText) getDialog().findViewById(R.id.title);
-                Spinner imp = (Spinner) getDialog().findViewById(R.id.grades);
+                SeekBar imp = (SeekBar) getDialog().findViewById(R.id.seekBar);
 
                 String activityTitle = title.getText().toString();
-                String importance = imp.getSelectedItem().toString();
+                String importance = Integer.toString(imp.getProgress());
 
                 SharedPreferences.Editor prefsEditor = preferences.edit();
                 int num = preferences.getInt("ActivityNum", 0);
