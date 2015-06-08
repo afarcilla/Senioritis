@@ -5,10 +5,12 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class TextEntryFragment extends DialogFragment {
@@ -24,15 +26,39 @@ public class TextEntryFragment extends DialogFragment {
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                SharedPreferences preferences = getActivity().getSharedPreferences(
+                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
                 EditText title = (EditText) getDialog().findViewById(R.id.title_entry);
+                EditText units = (EditText) getDialog().findViewById(R.id.numunits);
+                Spinner grade = (Spinner) getDialog().findViewById(R.id.grades);
+                EditText hw = (EditText) getDialog().findViewById(R.id.hwpercent);
+                EditText mid = (EditText) getDialog().findViewById(R.id.midpercent);
+                EditText fin = (EditText) getDialog().findViewById(R.id.finalpercent);
+                EditText proj = (EditText) getDialog().findViewById(R.id.projpercent);
+                EditText other = (EditText) getDialog().findViewById(R.id.othpercent);
+
                 String courseTitle = title.getText().toString();
+                String numUnits = units.getText().toString();
+                String gradeDesired = grade.getSelectedItem().toString();
+                String hwPercent = hw.getText().toString();
+                String midPercent = mid.getText().toString();
+                String finalPercent = fin.getText().toString();
+                String projectPercent = proj.getText().toString();
+                String otherPercent = other.getText().toString();
 
-
-                Context context = getActivity().getApplicationContext();
-                CharSequence text = courseTitle;
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                SharedPreferences.Editor prefsEditor = preferences.edit();
+                int num = preferences.getInt("classNum", 0);
+                prefsEditor.putInt("classNum", num+1);
+                prefsEditor.putString("courseTitle" + num, courseTitle);
+                prefsEditor.putString("numUnits" + num, numUnits);
+                prefsEditor.putString("gradeDesired" + num, gradeDesired);
+                prefsEditor.putString("hwPercent" + num, hwPercent);
+                prefsEditor.putString("midPercent" + num, midPercent);
+                prefsEditor.putString("finalPercent" + num, finalPercent);
+                prefsEditor.putString("projectPercent" + num, projectPercent);
+                prefsEditor.putString("otherPercent" + num, otherPercent);
+                prefsEditor.commit();
             }
         });
 
