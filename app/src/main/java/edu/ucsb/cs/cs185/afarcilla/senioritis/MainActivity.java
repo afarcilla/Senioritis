@@ -3,6 +3,7 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
@@ -10,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
@@ -104,5 +108,18 @@ public class MainActivity extends FragmentActivity {
         Fragment f = fm.findFragmentByTag("addActivity");
         getFragmentManager().beginTransaction().remove(f).commit();
     }
+/*
+    public void submitClassEntry(View v){
+        FragmentManager fm = getFragmentManager();
+        Fragment f = fm.findFragmentByTag("addClass");
+        View view = f.getView();
+        EditText courseTitle = (EditText) .findViewById(R.id.title_entry);
+        String s = courseTitle.getText().toString();
+        Context context = getApplicationContext();
+        CharSequence text = s;
+        int duration = Toast.LENGTH_SHORT;
 
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }*/
 }
