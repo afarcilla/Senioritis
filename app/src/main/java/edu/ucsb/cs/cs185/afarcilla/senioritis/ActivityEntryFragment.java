@@ -7,11 +7,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class ActivityEntryFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -35,12 +37,20 @@ public class ActivityEntryFragment extends DialogFragment {
                 String activityTitle = title.getText().toString();
                 Integer importance = imp.getProgress();
 
-                SharedPreferences.Editor prefsEditor = preferences.edit();
-                int num = preferences.getInt("ActivityNum", 0);
-                prefsEditor.putInt("ActivityNum", num+1);
-                prefsEditor.putString("activityTitle" + num, activityTitle);
-                prefsEditor.putInt("importance" + num, importance);
-                prefsEditor.commit();
+                if(activityTitle.equals("")) {
+                    Toast.makeText(getActivity().getApplicationContext(), "missing fields", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    SharedPreferences.Editor prefsEditor = preferences.edit();
+                    int num = preferences.getInt("ActivityNum", 0);
+                    prefsEditor.putInt("ActivityNum", num + 1);
+                    prefsEditor.putString("activityTitle" + num, activityTitle);
+                    prefsEditor.putInt("importance" + num, importance);
+                    prefsEditor.commit();
+                    FragmentTabHost mTabHost = (FragmentTabHost) getActivity().findViewById(android.R.id.tabhost);
+                    mTabHost.setCurrentTab(0);
+                    mTabHost.setCurrentTab(1);
+                }
             }
         });
 
