@@ -31,13 +31,24 @@ public class HomeTab extends Fragment {
         View v = inflater.inflate(R.layout.home_layout, container, false);
         setDaysLeftView(v);
 
-        final List<String> myDataset = new ArrayList<>();
+        final List<ClassStruct> myDataset = new ArrayList<>();
 
         SharedPreferences preferences = getActivity().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
         int numClasses = preferences.getInt("classNum", 0);
+
+
         for(int i = 0; i < numClasses; i++){
-            myDataset.add("class");
+            myDataset.add(new ClassStruct(
+                    preferences.getString("courseTitle" + i, "Empty"),
+                    preferences.getFloat("numUnits" + i, 0),
+                    preferences.getString("gradeDesired" + i, "N/A"),
+                    preferences.getFloat("hwPercent" + i, 0),
+                    preferences.getFloat("midPercent" + i, 0),
+                    preferences.getFloat("finalPercent" + i, 0),
+                    preferences.getFloat("projectPercent" + i, 0),
+                    preferences.getFloat("otherPercent" + i, 0)));
         }
 
         if(!myDataset.isEmpty()) {

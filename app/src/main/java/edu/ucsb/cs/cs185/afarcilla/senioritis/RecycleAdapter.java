@@ -10,7 +10,7 @@ import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHolder> {
 
-    private List<String> mDataset;
+    private List<ClassStruct> mDataset;
 
     public static class CardHolder extends RecyclerView.ViewHolder {
         public View mView;
@@ -21,7 +21,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecycleAdapter(List<String> myDataset) {
+    public RecycleAdapter(List<ClassStruct> myDataset) {
         mDataset = myDataset;
     }
 
@@ -39,8 +39,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(CardHolder holder, int position) {
+        String className = mDataset.get(position).className;
+
         TextView class_title = (TextView) holder.mView.findViewById(R.id.classTitle);
-        class_title.setText("test1");
+        class_title.setText(className);
 
     }
 

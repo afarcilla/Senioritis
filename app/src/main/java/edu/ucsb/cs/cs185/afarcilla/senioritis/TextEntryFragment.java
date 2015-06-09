@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class TextEntryFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -51,13 +50,13 @@ public class TextEntryFragment extends DialogFragment {
                 int num = preferences.getInt("classNum", 0);
                 prefsEditor.putInt("classNum", num+1);
                 prefsEditor.putString("courseTitle" + num, courseTitle);
-                prefsEditor.putString("numUnits" + num, numUnits);
+                prefsEditor.putFloat("numUnits" + num, Float.parseFloat(numUnits));
                 prefsEditor.putString("gradeDesired" + num, gradeDesired);
-                prefsEditor.putString("hwPercent" + num, hwPercent);
-                prefsEditor.putString("midPercent" + num, midPercent);
-                prefsEditor.putString("finalPercent" + num, finalPercent);
-                prefsEditor.putString("projectPercent" + num, projectPercent);
-                prefsEditor.putString("otherPercent" + num, otherPercent);
+                prefsEditor.putFloat("hwPercent" + num, Float.parseFloat(hwPercent));
+                prefsEditor.putFloat("midPercent" + num, Float.parseFloat(midPercent));
+                prefsEditor.putFloat("finalPercent" + num, Float.parseFloat(finalPercent));
+                prefsEditor.putFloat("projectPercent" + num, Float.parseFloat(projectPercent));
+                prefsEditor.putFloat("otherPercent" + num, Float.parseFloat(otherPercent));
                 prefsEditor.commit();
             }
         });
