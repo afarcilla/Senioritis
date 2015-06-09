@@ -39,10 +39,13 @@ public class ActivityRecycleAdapter extends RecyclerView.Adapter<ActivityRecycle
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(CardHolder holder, int position) {
-        String className = mDataset.get(position).activityName;
+        String ActivityName = mDataset.get(position).activityName;
+        Integer importance = mDataset.get(position).priority;
 
-        TextView activity_title = (TextView) holder.mView.findViewById(R.id.ActivityTitle);
-        activity_title.setText(className);
+        TextView activityName = (TextView) holder.mView.findViewById(R.id.ActivityTitle);
+        TextView importanceNumber = (TextView) holder.mView.findViewById(R.id.importanceNumber);
+        activityName.setText(ActivityName);
+        importanceNumber.setText(Integer.toString(importance));
 
     }
 

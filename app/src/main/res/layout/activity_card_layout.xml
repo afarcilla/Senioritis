@@ -23,6 +23,21 @@
                 android:text="Activity Name"
                 android:textSize="23sp"
                 android:layout_alignParentTop="true"/>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/importanceTitle"
+                android:textColor="@color/graphite"
+                android:text="Importance"
+                android:textSize="23sp"
+                android:layout_below="@+id/ActivityTitle"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/importanceNumber"
+                android:textColor="@color/graphite"
+                android:text="Importance Number"
+                android:layout_below="@id/importanceTitle"
+                android:textSize="23sp" />
 
 
         </RelativeLayout>
