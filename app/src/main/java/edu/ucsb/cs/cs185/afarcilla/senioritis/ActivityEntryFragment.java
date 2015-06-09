@@ -33,13 +33,13 @@ public class ActivityEntryFragment extends DialogFragment {
                 SeekBar imp = (SeekBar) getDialog().findViewById(R.id.seekBar);
 
                 String activityTitle = title.getText().toString();
-                String importance = Integer.toString(imp.getProgress());
+                Integer importance = imp.getProgress();
 
                 SharedPreferences.Editor prefsEditor = preferences.edit();
                 int num = preferences.getInt("ActivityNum", 0);
                 prefsEditor.putInt("ActivityNum", num+1);
                 prefsEditor.putString("activityTitle" + num, activityTitle);
-                prefsEditor.putString("importance" + num, importance);
+                prefsEditor.putInt("importance" + num, importance);
                 prefsEditor.commit();
             }
         });

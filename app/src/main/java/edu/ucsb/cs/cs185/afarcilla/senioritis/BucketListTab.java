@@ -5,14 +5,20 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class BucketListTab extends Fragment {
+    private ActivityRecycleAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,43 @@ public class BucketListTab extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bucket_list_layout, container, false);
         setDaysLeftView(v);
+
+        SharedPreferences preferences = getActivity().getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        int numActivities = preferences.getInt("ActivityNum", 0);
+
+        final List<ActivityStruct> myDataset = new ArrayList<>();
+        for(int i = 0; i < numActivities; i++){
+            myDataset.add(new ActivityStruct(preferences.getString("activityTitle" + i, "Empty"),
+                    preferences.getInt("importance" + i, 0)));
+
+        }
+
+        if(!myDataset.isEmpty()) {
+            TextView emptyText = (TextView) v.findViewById(R.id.empty);
+            emptyText.setText("");
+        }
+
+        final FragmentActivity c = getActivity();
+        final RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(c);
+        recyclerView.setLayoutManager(layoutManager);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                adapter = new ActivityRecycleAdapter(myDataset);
+                c.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView.setAdapter(adapter);
+                    }
+                });
+            }
+        }).start();
+
         return v;
     }
 
