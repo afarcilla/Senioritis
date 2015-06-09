@@ -18,6 +18,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class HomeTab extends Fragment {
+    private RecycleAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,7 @@ public class HomeTab extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final RecycleAdapter adapter = new RecycleAdapter(myDataset);
+                adapter = new RecycleAdapter(myDataset);
                 c.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

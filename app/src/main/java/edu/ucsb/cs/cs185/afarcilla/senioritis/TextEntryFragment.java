@@ -61,6 +61,8 @@ public class TextEntryFragment extends DialogFragment {
                 prefsEditor.putFloat("otherPercent" + num, Float.parseFloat(otherPercent));
                 prefsEditor.commit();
 
+
+
             }
         });
 
