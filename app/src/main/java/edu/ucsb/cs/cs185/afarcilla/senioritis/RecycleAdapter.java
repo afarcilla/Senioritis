@@ -13,10 +13,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
     private List<String> mDataset;
 
     public static class CardHolder extends RecyclerView.ViewHolder {
-        public View mImageView;
+        public View mView;
         public CardHolder(View v) {
             super(v);
-            mImageView = v;
+            mView = v;
         }
     }
 
@@ -39,7 +39,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(CardHolder holder, int position) {
-        TextView class_title = (TextView) holder.mImageView.findViewById(R.id.classTitle);
+        TextView class_title = (TextView) holder.mView.findViewById(R.id.classTitle);
         class_title.setText("test1");
 
     }

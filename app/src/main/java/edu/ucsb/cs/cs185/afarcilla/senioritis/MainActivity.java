@@ -19,18 +19,11 @@ import java.util.List;
 public class MainActivity extends FragmentActivity {
 
     private FragmentTabHost mTabHost;
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
-    List<String> myDataset = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
-        myDataset.add("test");
 
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
@@ -44,9 +37,6 @@ public class MainActivity extends FragmentActivity {
         mTabHost.addTab(
                 mTabHost.newTabSpec("Profile").setIndicator("", getResources().getDrawable(R.drawable.users86)),
                 ProfileTab.class, null);
-
-
-
 
     }
 
