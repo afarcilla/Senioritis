@@ -60,6 +60,11 @@ public class MainActivity extends FragmentActivity {
         newFragment.show(getFragmentManager(), "addActivity");
     }
 
+    public void addAssignment(View v) {
+        DialogFragment newFragment = new AssignmentEntryFragment();
+        newFragment.show(getFragmentManager(), "addAssignment");
+    }
+
     public void startHomeInfo(View v){
         DialogFragment newFragment = new InfoHomeFragment();
         newFragment.show(getFragmentManager(), "homeInfoScreen");
