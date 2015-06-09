@@ -32,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/edit422"
                 android:layout_alignParentRight="true"
-                android:paddingTop="2dp"/>
+                android:paddingTop="2dp"
+                android:onClick="editActivity"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"

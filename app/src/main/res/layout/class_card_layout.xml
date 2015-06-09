@@ -28,12 +28,6 @@
                 android:text="Class Name"
                 android:textSize="20dp"
                 android:layout_alignParentTop="true"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/edit422"
-                android:layout_alignParentRight="true"
-                android:paddingTop="2dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
