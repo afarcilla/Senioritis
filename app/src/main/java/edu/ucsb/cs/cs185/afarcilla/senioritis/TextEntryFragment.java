@@ -3,13 +3,12 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -22,7 +21,8 @@ public class TextEntryFragment extends DialogFragment {
         layout.setOrientation(LinearLayout.VERTICAL);
 
         LayoutInflater i = LayoutInflater.from(getActivity());
-        builder.setView(i.inflate(R.layout.frag_classinfo, null));
+        View v = i.inflate(R.layout.frag_classinfo, null);
+        builder.setView(v);
 
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
