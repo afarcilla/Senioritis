@@ -63,6 +63,63 @@ public class ClassActivity  extends Activity {
         mAdapter = new ClassRecycleAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
 
+        TextView grade = (TextView) findViewById(R.id.grade);
+
+
+
+
+        String desiredGrade = extras.getString("desiredGrade");
+        Float homeworkPercent = extras.getFloat("homeworkPercent");
+        Float midtermPercent = extras.getFloat("midtermPercent");
+        Float finalPercent = extras.getFloat("finalPercent");
+        Float projectsPercent = extras.getFloat("projectsPercent");
+        Float otherPercent = extras.getFloat("otherPercent");
+
+        int gradeValue = 0;
+        switch (desiredGrade){
+            case "A+":
+                gradeValue = 97;
+                break;
+            case "A":
+                gradeValue = 93;
+                break;
+            case "A-":
+                gradeValue = 90;
+                break;
+            case "B+":
+                gradeValue = 87;
+                break;
+            case "B":
+                gradeValue = 83;
+                break;
+            case "B-":
+                gradeValue = 80;
+                break;
+            case "C+":
+                gradeValue = 77;
+                break;
+            case "C":
+                gradeValue = 73;
+                break;
+            case "C-":
+                gradeValue = 70;
+                break;
+            case "D+":
+                gradeValue = 67;
+                break;
+            case "D":
+                gradeValue = 63;
+                break;
+            case "D-":
+                gradeValue = 60;
+                break;
+            case "F":
+                gradeValue = 59;
+        }
+
+        Float percentNeeded = 100 * ((gradeValue - (homeworkPercent + midtermPercent + projectsPercent + otherPercent)) / finalPercent);
+        grade.setText(String.valueOf(percentNeeded) + "%");
+
 
     }
 
