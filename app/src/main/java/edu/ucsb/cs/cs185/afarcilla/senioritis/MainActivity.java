@@ -97,4 +97,5 @@ public class MainActivity extends FragmentActivity {
         DialogFragment newFragment = new ProfileFragment();
         newFragment.show(getFragmentManager(), "editProfile");
     }
+
 }

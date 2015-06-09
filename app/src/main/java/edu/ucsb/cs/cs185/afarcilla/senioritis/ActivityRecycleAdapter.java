@@ -40,7 +40,7 @@ public class ActivityRecycleAdapter extends RecyclerView.Adapter<ActivityRecycle
     @Override
     public void onBindViewHolder(CardHolder holder, int position) {
         String ActivityName = mDataset.get(position).activityName;
-        Integer importance = mDataset.get(position).priority;
+        Integer importance = mDataset.get(position).priority + 1;
 
         TextView activityName = (TextView) holder.mView.findViewById(R.id.ActivityTitle);
         TextView importanceNumber = (TextView) holder.mView.findViewById(R.id.importanceNumber);

@@ -35,9 +35,22 @@ public class ProfileFragment extends DialogFragment {
         View v = i.inflate(R.layout.frag_profile, null);
         builder.setView(v);
 
+        EditText defaultName = (EditText) v.findViewById(R.id.nametext);
+        TextView currentName = (TextView) getActivity().findViewById(R.id.nametext);
+        defaultName.setText(currentName.getText());
+
+        EditText defaultUnits =(EditText) v.findViewById(R.id.units);
+        TextView currentUnits = (TextView) getActivity().findViewById(R.id.units);
+        defaultUnits.setText(currentUnits.getText());
+
+        EditText defaultGpa =(EditText) v.findViewById(R.id.current);
+        TextView currentGpa = (TextView) getActivity().findViewById(R.id.current);
+        defaultGpa.setText(currentGpa.getText());
+
         TextView defaultDate = (TextView) v.findViewById(R.id.gdate);
         TextView currentDate = (TextView) getActivity().findViewById(R.id.enddate);
         defaultDate.setText(currentDate.getText());
+
 
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
@@ -45,10 +58,12 @@ public class ProfileFragment extends DialogFragment {
                 SharedPreferences preferences = getActivity().getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
+                EditText name = (EditText) getDialog().findViewById(R.id.nametext);
                 EditText units = (EditText) getDialog().findViewById(R.id.units);
                 EditText current = (EditText) getDialog().findViewById(R.id.current);
                 TextView date = (TextView) getDialog().findViewById(R.id.gdate);
 
+                String newName = name.getText().toString();
                 String totalUnits = units.getText().toString();
                 String currentgpa = current.getText().toString();
                 String gradDate = date.getText().toString();
@@ -58,14 +73,17 @@ public class ProfileFragment extends DialogFragment {
                 }
                 else {
                     SharedPreferences.Editor prefsEditor = preferences.edit();
+                    prefsEditor.putString("name", newName);
                     prefsEditor.putString("units", totalUnits);
                     prefsEditor.putString("gpa", currentgpa);
                     prefsEditor.putLong("gradDate", calendar.getTime().getTime());
                     prefsEditor.commit();
 
+                    TextView nameMain = (TextView) getActivity().findViewById(R.id.nametext);
                     TextView unitsMain = (TextView) getActivity().findViewById(R.id.units);
                     TextView gpaMain = (TextView) getActivity().findViewById(R.id.current);
                     TextView graduationDate = (TextView) getActivity().findViewById(R.id.enddate);
+                    nameMain.setText(newName);
                     unitsMain.setText(totalUnits);
                     gpaMain.setText(currentgpa);
                     graduationDate.setText(gradDate);

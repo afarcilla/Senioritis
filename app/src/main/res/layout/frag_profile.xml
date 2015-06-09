@@ -12,7 +12,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/info">
+            android:id="@+id/name">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/name"
+                android:id="@+id/personal"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:paddingBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/nameis"
+                            android:text="Name:"
+                            android:textSize="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="bottom"
+                            android:padding="10dp"/>
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:inputType="text"
+                            android:ems="4"
+                            android:id="@+id/nametext"
+                            android:padding="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/info"
+            android:layout_below="@id/name">
 
             <TextView
                 android:layout_height="wrap_content"
