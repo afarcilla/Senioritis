@@ -137,4 +137,9 @@ public class ClassActivity  extends Activity {
         DialogFragment newFragment = new AssignmentEntryFragment();
         newFragment.show(getFragmentManager(), "addAssignment");
     }
+
+    public void editAssignment(View v) {
+        DialogFragment newFragment = new AssignmentEditFragment();
+        newFragment.show(getFragmentManager(), "editActivity");
+    }
 }

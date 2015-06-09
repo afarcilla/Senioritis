@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 /**
  * Created by Natasha on 6/9/15.
  */
-public class ActivityEditFragment extends DialogFragment {
+public class AssignmentEditFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -19,7 +19,7 @@ public class ActivityEditFragment extends DialogFragment {
         layout.setOrientation(LinearLayout.VERTICAL);
 
         LayoutInflater i = LayoutInflater.from(getActivity());
-        builder.setView(i.inflate(R.layout.frag_activitiesinfo, null));
+        builder.setView(i.inflate(R.layout.frag_assignment_info, null));
 
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
