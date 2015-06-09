@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class TextEntryFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -49,21 +50,34 @@ public class TextEntryFragment extends DialogFragment {
                 String projectPercent = proj.getText().toString();
                 String otherPercent = other.getText().toString();
 
-                SharedPreferences.Editor prefsEditor = preferences.edit();
-                int num = preferences.getInt("classNum", 0);
-                prefsEditor.putInt("classNum", num+1);
-                prefsEditor.putString("courseTitle" + num, courseTitle);
-                prefsEditor.putFloat("numUnits" + num, Float.parseFloat(numUnits));
-                prefsEditor.putString("gradeDesired" + num, gradeDesired);
-                prefsEditor.putFloat("hwPercent" + num, Float.parseFloat(hwPercent));
-                prefsEditor.putFloat("midPercent" + num, Float.parseFloat(midPercent));
-                prefsEditor.putFloat("finalPercent" + num, Float.parseFloat(finalPercent));
-                prefsEditor.putFloat("projectPercent" + num, Float.parseFloat(projectPercent));
-                prefsEditor.putFloat("otherPercent" + num, Float.parseFloat(otherPercent));
-                prefsEditor.commit();
-                FragmentTabHost mTabHost = (FragmentTabHost) getActivity().findViewById(android.R.id.tabhost);
-                mTabHost.setCurrentTab(1);
-                mTabHost.setCurrentTab(0);
+                if(courseTitle.equals("")        ||
+                        numUnits.equals("")      ||
+                        gradeDesired.equals("")  ||
+                        hwPercent.equals("")     ||
+                        midPercent.equals("")    ||
+                        finalPercent.equals("")  ||
+                        projectPercent.equals("")||
+                        otherPercent.equals(""))
+                {
+                    Toast.makeText(getActivity().getApplicationContext(), "missing fields", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    SharedPreferences.Editor prefsEditor = preferences.edit();
+                    int num = preferences.getInt("classNum", 0);
+                    prefsEditor.putInt("classNum", num + 1);
+                    prefsEditor.putString("courseTitle" + num, courseTitle);
+                    prefsEditor.putFloat("numUnits" + num, Float.parseFloat(numUnits));
+                    prefsEditor.putString("gradeDesired" + num, gradeDesired);
+                    prefsEditor.putFloat("hwPercent" + num, Float.parseFloat(hwPercent));
+                    prefsEditor.putFloat("midPercent" + num, Float.parseFloat(midPercent));
+                    prefsEditor.putFloat("finalPercent" + num, Float.parseFloat(finalPercent));
+                    prefsEditor.putFloat("projectPercent" + num, Float.parseFloat(projectPercent));
+                    prefsEditor.putFloat("otherPercent" + num, Float.parseFloat(otherPercent));
+                    prefsEditor.commit();
+                    FragmentTabHost mTabHost = (FragmentTabHost) getActivity().findViewById(android.R.id.tabhost);
+                    mTabHost.setCurrentTab(1);
+                    mTabHost.setCurrentTab(0);
+                }
             }
         });
 

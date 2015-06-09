@@ -53,37 +53,41 @@ public class ProfileFragment extends DialogFragment {
                 String currentgpa = current.getText().toString();
                 String gradDate = date.getText().toString();
 
-                SharedPreferences.Editor prefsEditor = preferences.edit();
-                prefsEditor.putString("units", totalUnits);
-                prefsEditor.putString("gpa", currentgpa);
-                prefsEditor.putLong("gradDate", calendar.getTime().getTime());
-                prefsEditor.commit();
-
-                TextView unitsMain = (TextView) getActivity().findViewById(R.id.units);
-                TextView gpaMain = (TextView) getActivity().findViewById(R.id.current);
-                TextView graduationDate = (TextView) getActivity().findViewById(R.id.enddate);
-                unitsMain.setText(totalUnits);
-                gpaMain.setText(currentgpa);
-                graduationDate.setText(gradDate);
-
-                //update days left
-                TextView text = (TextView) getActivity().findViewById(R.id.daysleft);
-                Calendar c = Calendar.getInstance();
-                long currentTime = c.getTime().getTime();
-                long days = (calendar.getTime().getTime() - currentTime) / (24 * 60 * 60 * 1000);
-                String daysLeft = String.valueOf(days + 1);
-
-                if(days < 0){
-                    daysLeft = "ended";
-                    text.setTextColor(getResources().getColor(R.color.light_pink));
-                    text.setTypeface(null, Typeface.BOLD);
+                if(totalUnits.equals("")  || currentgpa.equals("")   || gradDate.equals("")) {
+                    Toast.makeText(getActivity().getApplicationContext(), "missing fields", Toast.LENGTH_LONG).show();
                 }
-                else{
-                    text.setTextColor(getResources().getColor(R.color.primary_dark_material_dark));
-                    text.setTypeface(null, Typeface.NORMAL);
-                }
+                else {
+                    SharedPreferences.Editor prefsEditor = preferences.edit();
+                    prefsEditor.putString("units", totalUnits);
+                    prefsEditor.putString("gpa", currentgpa);
+                    prefsEditor.putLong("gradDate", calendar.getTime().getTime());
+                    prefsEditor.commit();
 
-                text.setText(daysLeft);
+                    TextView unitsMain = (TextView) getActivity().findViewById(R.id.units);
+                    TextView gpaMain = (TextView) getActivity().findViewById(R.id.current);
+                    TextView graduationDate = (TextView) getActivity().findViewById(R.id.enddate);
+                    unitsMain.setText(totalUnits);
+                    gpaMain.setText(currentgpa);
+                    graduationDate.setText(gradDate);
+
+                    //update days left
+                    TextView text = (TextView) getActivity().findViewById(R.id.daysleft);
+                    Calendar c = Calendar.getInstance();
+                    long currentTime = c.getTime().getTime();
+                    long days = (calendar.getTime().getTime() - currentTime) / (24 * 60 * 60 * 1000);
+                    String daysLeft = String.valueOf(days + 1);
+
+                    if (days < 0) {
+                        daysLeft = "ended";
+                        text.setTextColor(getResources().getColor(R.color.light_pink));
+                        text.setTypeface(null, Typeface.BOLD);
+                    } else {
+                        text.setTextColor(getResources().getColor(R.color.primary_dark_material_dark));
+                        text.setTypeface(null, Typeface.NORMAL);
+                    }
+
+                    text.setText(daysLeft);
+                }
             }
         });
 
