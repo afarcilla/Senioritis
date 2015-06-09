@@ -14,17 +14,34 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_height="wrap_content">
 
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/classTitle"
                 android:textColor="@color/graphite"
-                android:text="Class"
-                android:textSize="15sp"
-                android:layout_alignParentTop="true" />
+                android:text="Class Name"
+                android:textSize="23sp"
+                android:layout_alignParentTop="true"/>
 
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentGradeTitle"
+                android:textColor="@color/graphite"
+                android:text="Current Grade"
+                android:textSize="20sp"
+                android:layout_below="@+id/classTitle"
+                android:paddingTop="30dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentGrade"
+                android:textColor="@color/graphite"
+                android:text="A"
+                android:textColorHighlight="@color/material_blue_500"
+                android:textSize="23sp"
+                android:layout_below="@+id/currentGradeTitle"
+                android:paddingTop="15dp"/>
 
         </RelativeLayout>
 
