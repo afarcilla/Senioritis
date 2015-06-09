@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:id="@+id/home_layout">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/header"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/off_white"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/bg_color">
+
+            <TextView android:text="C L A S S" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:textColor="@color/teal"
+                android:textSize="15dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignRight="@+id/daysleft"
+                android:paddingRight="10dp"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/keyboard54_tinted"
+                android:onClick="startHomeInfo"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/off_white"
+            android:layout_below="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView android:text="Grade needed on final:" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gradeneeded"
+                android:textColor="@color/teal"
+                android:textSize="15sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignRight="@+id/grade"
+                android:paddingRight="10dp"
+                android:layout_gravity="center"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade"
+                android:textColor="@color/graphite"
+                android:textSize="15sp"
+                android:layout_alignLeft="@+id/term"
+                android:layout_gravity="center"/>
+        </android.support.v7.widget.Toolbar>
+
+
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:tint="@android:color/white"
+            android:src="@android:drawable/ic_input_add"
+            fab:fab_colorNormal="@color/teal"
+            fab:fab_colorPressed="@color/teal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:onClick="addClass"/>
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/my_recycler_view"-->
+            <!--android:scrollbars="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/toolbar" />-->
+
+
+    </RelativeLayout>
+
+    <TextView android:text="no graded work added" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/empty"
+        android:textColor="@color/grey"
+        android:textSize="30sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
