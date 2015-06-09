@@ -19,8 +19,6 @@ public class GradDateActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graddate);
-
-
     }
 
     public void startClick(View v){

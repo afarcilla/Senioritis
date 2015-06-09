@@ -40,9 +40,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
     @Override
     public void onBindViewHolder(CardHolder holder, int position) {
         String className = mDataset.get(position).className;
+        String targetGrade = mDataset.get(position).desiredGrade;
 
         TextView class_title = (TextView) holder.mView.findViewById(R.id.classTitle);
+        TextView target = (TextView) holder.mView.findViewById(R.id.targetGrade);
         class_title.setText(className);
+        target.setText(targetGrade);
 
     }
 
