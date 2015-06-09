@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -60,7 +61,9 @@ public class TextEntryFragment extends DialogFragment {
                 prefsEditor.putFloat("projectPercent" + num, Float.parseFloat(projectPercent));
                 prefsEditor.putFloat("otherPercent" + num, Float.parseFloat(otherPercent));
                 prefsEditor.commit();
-
+                FragmentTabHost mTabHost = (FragmentTabHost) getActivity().findViewById(android.R.id.tabhost);
+                mTabHost.setCurrentTab(1);
+                mTabHost.setCurrentTab(0);
             }
         });
 
