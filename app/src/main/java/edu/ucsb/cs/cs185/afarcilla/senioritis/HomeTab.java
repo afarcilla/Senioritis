@@ -49,7 +49,8 @@ public class HomeTab extends Fragment {
                     preferences.getFloat("midPercent" + i, 0),
                     preferences.getFloat("finalPercent" + i, 0),
                     preferences.getFloat("projectPercent" + i, 0),
-                    preferences.getFloat("otherPercent" + i, 0)));
+                    preferences.getFloat("otherPercent" + i, 0),
+                    i));
         }
 
         if(!myDataset.isEmpty()) {

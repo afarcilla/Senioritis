@@ -10,6 +10,7 @@ public class ClassStruct {
     public Float finalPercent;
     public Float projectsPercent;
     public Float otherPercent;
+    public Float classNumId;
 
     public ClassStruct(String className,
                         Float units,
@@ -18,7 +19,7 @@ public class ClassStruct {
                         Float midTermPercent,
                         Float finalPercent,
                         Float projectsPercent,
-                        Float otherPercent){
+                        Float otherPercent, Integer ClassNumId){
 
         this.className = className;
         this.units = units;

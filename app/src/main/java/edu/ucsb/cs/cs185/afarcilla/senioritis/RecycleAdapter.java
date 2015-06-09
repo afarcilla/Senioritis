@@ -72,6 +72,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
                 touchIntent.putExtra("finalPercent", finalPercent);
                 touchIntent.putExtra("projectsPercent", projectsPercent);
                 touchIntent.putExtra("otherPercent", otherPercent);
+                touchIntent.putExtra("ClassNumIdNum", mDataset.get(p).classNumId);
 
                 context.startActivity(touchIntent);
             }});

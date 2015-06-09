@@ -19,6 +19,7 @@ public class ClassActivity  extends Activity {
     private RecyclerView mRecyclerView;
     private ClassRecycleAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    public Integer ClassIdNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,17 @@ public class ClassActivity  extends Activity {
         SharedPreferences preferences = this.getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-        int assignmentsNum = preferences.getInt("assignmentsNum", 1);
+        int assignmentsNum = preferences.getInt("assignmentsNum", 0);
+        String assignmentTitle = preferences.getString("assignmentTitle", "");
+        String assignmentCategory = preferences.getString("assignmentCategory", "");
+        int assignmentScore = preferences.getInt("assignmentScore", 1);
+        int assignmentOutOf = preferences.getInt("assignmentOutOf", 1);
+
 
 
         for(int i = 0; i < assignmentsNum; i++){
             //add assignment data
-            myDataset.add(new AssignmentStruct("test1", "Homework", 0));
+            myDataset.add(new AssignmentStruct(assignmentTitle, assignmentCategory, assignmentScore));
 
         }
 
@@ -66,15 +72,13 @@ public class ClassActivity  extends Activity {
 
         TextView grade = (TextView) findViewById(R.id.grade);
 
-
-
-
         String desiredGrade = extras.getString("desiredGrade");
         Float homeworkPercent = extras.getFloat("homeworkPercent");
         Float midtermPercent = extras.getFloat("midtermPercent");
         Float finalPercent = extras.getFloat("finalPercent");
         Float projectsPercent = extras.getFloat("projectsPercent");
         Float otherPercent = extras.getFloat("otherPercent");
+        this.ClassIdNum = extras.getInt("ClassNumIdNum");
 
         int gradeValue = 0;
         switch (desiredGrade){
@@ -127,6 +131,7 @@ public class ClassActivity  extends Activity {
     public void backButton(View v){
         this.finish();
     }
+
 
     public void addAssignment(View v) {
         DialogFragment newFragment = new AssignmentEntryFragment();

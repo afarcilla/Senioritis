@@ -12,11 +12,9 @@ import android.view.LayoutInflater;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-/**
- * Created by Natasha on 6/9/15.
- */
 public class AssignmentEntryFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -30,6 +28,34 @@ public class AssignmentEntryFragment extends DialogFragment {
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                SharedPreferences preferences = getActivity().getSharedPreferences(
+                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+                EditText title = (EditText) getDialog().findViewById(R.id.title_entry);
+                Spinner category = (Spinner) getDialog().findViewById(R.id.grades);
+                EditText points = (EditText) getDialog().findViewById(R.id.points);
+                EditText outOf = (EditText) getDialog().findViewById(R.id.outof);
+
+                String assignment = title.getText().toString();
+                String categoryType = category.getSelectedItem().toString();
+                String pointsNum = points.getText().toString();
+                String outOfNum = outOf.getText().toString();
+
+
+                SharedPreferences.Editor prefsEditor = preferences.edit();
+                int num = preferences.getInt("AssignmentNum", 0);
+                prefsEditor.putInt("AssignmentNum", num + 1);
+                prefsEditor.putString("assignmentTitle" + num, assignment);
+                prefsEditor.putString("assignmentCategory" + num, categoryType);
+                prefsEditor.putString("assignmentScore" + num, pointsNum);
+                prefsEditor.putString("assignmentOutOf" + num, outOfNum);
+
+                prefsEditor.commit();
+                FragmentTabHost mTabHost = (FragmentTabHost) getActivity().findViewById(android.R.id.tabhost);
+
+
+
 
             }
         });

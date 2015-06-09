@@ -47,6 +47,7 @@ public class ClassRecycleAdapter extends RecyclerView.Adapter<ClassRecycleAdapte
         assignment.setText(AssignmentName);
         assignmentGrade.setText(Integer.toString(grade));
 
+
     }
 
     @Override
