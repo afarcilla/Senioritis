@@ -30,18 +30,18 @@ public class HomeTab extends Fragment {
 
         View v = inflater.inflate(R.layout.home_layout, container, false);
         setDaysLeftView(v);
+
         final List<String> myDataset = new ArrayList<>();
         myDataset.add("test");
         myDataset.add("test");
-        myDataset.add("test");myDataset.add("test");myDataset.add("test");
-        myDataset.add("test");
-        myDataset.add("test");
-        myDataset.add("test");
         myDataset.add("test");
         myDataset.add("test");
         myDataset.add("test");
 
-
+        if(!myDataset.isEmpty()) {
+            TextView emptyText = (TextView) v.findViewById(R.id.empty);
+            emptyText.setText("");
+        }
 
         final FragmentActivity c = getActivity();
         final RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
