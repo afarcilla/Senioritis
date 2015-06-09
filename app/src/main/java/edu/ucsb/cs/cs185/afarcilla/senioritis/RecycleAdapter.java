@@ -1,5 +1,7 @@
 package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +48,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
         TextView target = (TextView) holder.mView.findViewById(R.id.targetGrade);
         class_title.setText(className);
         target.setText(targetGrade);
+
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent touchIntent = new Intent(context, ClassActivity.class);
+                context.startActivity(touchIntent);
+            }});
 
     }
 

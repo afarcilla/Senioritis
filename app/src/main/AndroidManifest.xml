@@ -30,6 +30,10 @@
             android:name=".GradDateActivity"
             android:label="Set Up" >
         </activity>
+        <activity
+            android:name=".ClassActivity"
+            android:label="Class Assignments" >
+        </activity>
     </application>
 
 </manifest>
