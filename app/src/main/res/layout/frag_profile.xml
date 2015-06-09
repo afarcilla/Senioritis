@@ -131,17 +131,18 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:orientation="horizontal">
-                        <EditText
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="4"
-                            android:id="@+id/gradDate"/>
+                            android:id="@+id/gdate"/>
                         <ImageView
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:src="@drawable/calendars12"
                             android:paddingTop="15dp"
-                            android:paddingLeft="10dp"/>
+                            android:paddingLeft="10dp"
+                            android:id="@+id/gradDate"/>
                     </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
