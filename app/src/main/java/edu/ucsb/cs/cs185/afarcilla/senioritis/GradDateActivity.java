@@ -13,16 +13,22 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class GradDateActivity extends Activity {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graddate);
+
+
     }
 
     public void startClick(View v){
+
         SharedPreferences preferences = this.getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
+        SharedPreferences.Editor prefsEditor = preferences.edit();
 
         DatePicker t_gradDate = (DatePicker) findViewById(R.id.datePicker);
         int day = t_gradDate.getDayOfMonth();
@@ -33,7 +39,7 @@ public class GradDateActivity extends Activity {
         calendar.set(year, month, day);
         Date gradDate = calendar.getTime();
 
-        SharedPreferences.Editor prefsEditor = preferences.edit();
+
         prefsEditor.putLong("gradDate", gradDate.getTime());
         prefsEditor.commit();
 
@@ -41,11 +47,23 @@ public class GradDateActivity extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+
+        prefsEditor.putBoolean("firstRun", false);
+        prefsEditor.commit();
+
     }
 
     public void skip(View v){
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+
+        SharedPreferences preferences = this.getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor prefsEditor = preferences.edit();
+
+        prefsEditor.putBoolean("firstRun", false);
+        prefsEditor.commit();
         startActivity(intent);
     }
 }
