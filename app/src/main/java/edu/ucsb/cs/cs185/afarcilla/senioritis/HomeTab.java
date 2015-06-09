@@ -5,12 +5,17 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class HomeTab extends Fragment {
 
@@ -25,6 +30,31 @@ public class HomeTab extends Fragment {
 
         View v = inflater.inflate(R.layout.home_layout, container, false);
         setDaysLeftView(v);
+        final List<String> myDataset = new ArrayList<>();
+        myDataset.add("test");
+
+
+
+        final FragmentActivity c = getActivity();
+        final RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(c);
+        recyclerView.setLayoutManager(layoutManager);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final RecycleAdapter adapter = new RecycleAdapter(myDataset);
+                c.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView.setAdapter(adapter);
+                    }
+                });
+            }
+        }).start();
+
+
         return v;
     }
 

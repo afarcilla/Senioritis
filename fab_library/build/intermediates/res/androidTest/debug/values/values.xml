@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/Natasha/AndroidStudioProjects/Senioritis/fab_library/build/intermediates/bundles/debug/res/values/values.xml -->
+    <!-- From: file:/Users/adrianarcilla/AndroidStudioProjects/Senioritis/fab_library/build/intermediates/bundles/debug/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_500">#5677fc</color>
     <declare-styleable name="FloatingActionButton"><attr format="color" name="fab_colorPressed"/><attr format="color" name="fab_colorNormal"/><attr format="color" name="fab_colorRipple"/><attr format="color" name="fab_colorDisabled"/><attr format="boolean" name="fab_shadow"/><attr format="enum" name="fab_type"><enum name="normal" value="0"/><enum name="mini" value="1"/></attr></declare-styleable>

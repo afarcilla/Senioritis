@@ -3,21 +3,34 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends FragmentActivity {
 
     private FragmentTabHost mTabHost;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
+    List<String> myDataset = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
+        myDataset.add("test");
 
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
@@ -31,6 +44,9 @@ public class MainActivity extends FragmentActivity {
         mTabHost.addTab(
                 mTabHost.newTabSpec("Profile").setIndicator("", getResources().getDrawable(R.drawable.users86)),
                 ProfileTab.class, null);
+
+
+
 
     }
 
