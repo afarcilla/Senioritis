@@ -126,7 +126,7 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="47dp">
+                    android:paddingLeft="30dp">
                     <LinearLayout
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
@@ -134,7 +134,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:ems="4"
+                            android:paddingTop="13dp"
                             android:id="@+id/gdate"/>
                         <ImageView
                             android:layout_height="wrap_content"

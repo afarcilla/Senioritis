@@ -35,6 +35,10 @@ public class ProfileFragment extends DialogFragment {
         View v = i.inflate(R.layout.frag_profile, null);
         builder.setView(v);
 
+        TextView defaultDate = (TextView) v.findViewById(R.id.gdate);
+        TextView currentDate = (TextView) getActivity().findViewById(R.id.enddate);
+        defaultDate.setText(currentDate.getText());
+
         builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
