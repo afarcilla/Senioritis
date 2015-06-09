@@ -1,6 +1,7 @@
 package edu.ucsb.cs.cs185.afarcilla.senioritis;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -125,5 +126,10 @@ public class ClassActivity  extends Activity {
 
     public void backButton(View v){
         this.finish();
+    }
+
+    public void addAssignment(View v) {
+        DialogFragment newFragment = new AssignmentEntryFragment();
+        newFragment.show(getFragmentManager(), "addAssignment");
     }
 }
