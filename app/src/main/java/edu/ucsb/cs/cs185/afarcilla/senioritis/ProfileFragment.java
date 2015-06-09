@@ -22,9 +22,6 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created by Natasha on 6/7/15.
- */
 public class ProfileFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final Calendar calendar = Calendar.getInstance();

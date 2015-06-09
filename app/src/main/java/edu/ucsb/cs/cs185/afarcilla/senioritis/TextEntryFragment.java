@@ -3,6 +3,8 @@ package edu.ucsb.cs.cs185.afarcilla.senioritis;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -58,6 +60,7 @@ public class TextEntryFragment extends DialogFragment {
                 prefsEditor.putFloat("projectPercent" + num, Float.parseFloat(projectPercent));
                 prefsEditor.putFloat("otherPercent" + num, Float.parseFloat(otherPercent));
                 prefsEditor.commit();
+                
             }
         });
 

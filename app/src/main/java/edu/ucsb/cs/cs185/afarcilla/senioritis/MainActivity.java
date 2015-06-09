@@ -93,18 +93,6 @@ public class MainActivity extends FragmentActivity {
         getFragmentManager().beginTransaction().remove(f).commit();
     }
 
-    public void cancelClassEntry(View v){
-        FragmentManager fm = getFragmentManager();
-        Fragment f = fm.findFragmentByTag("addClass");
-        getFragmentManager().beginTransaction().remove(f).commit();
-    }
-
-    public void cancelActivityEntry(View v){
-        FragmentManager fm = getFragmentManager();
-        Fragment f = fm.findFragmentByTag("addActivity");
-        getFragmentManager().beginTransaction().remove(f).commit();
-    }
-
     public void editProfile(View v) {
         DialogFragment newFragment = new ProfileFragment();
         newFragment.show(getFragmentManager(), "editProfile");
