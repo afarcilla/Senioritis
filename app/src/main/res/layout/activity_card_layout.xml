@@ -8,7 +8,7 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         card_view:cardCornerRadius="4dp"
         android:layout_margin="6dp">
 
@@ -27,21 +27,29 @@
                 android:text="Activity Name"
                 android:textSize="20dp"
                 android:layout_alignParentTop="true"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/edit422"
+                android:layout_alignParentRight="true"
+                android:paddingTop="2dp"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/current"
-                    android:padding="10dp"
-                    android:layout_centerInParent="true">
+                    android:padding="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@id/ActivityTitle">
 
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/importanceTitle"
-                        android:textColor="@color/graphite"
+                        android:textColor="@color/teal"
                         android:text="Importance"
-                        android:textSize="18dp"/>
+                        android:textSize="18dp"
+                        android:layout_gravity="center_horizontal"/>
 
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -49,19 +57,10 @@
                         android:textColor="@color/graphite"
                         android:text="Importance Number"
                         android:layout_below="@id/importanceTitle"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:layout_gravity="center_horizontal"/>
 
                 </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ActivityTitle">
-
-
-
-            </RelativeLayout>
-
 
         </RelativeLayout>
 
