@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -45,7 +46,7 @@ public class ProfileFragment extends DialogFragment {
 
                 EditText units = (EditText) getDialog().findViewById(R.id.units);
                 EditText current = (EditText) getDialog().findViewById(R.id.current);
-                EditText date = (EditText) getDialog().findViewById(R.id.gradDate);
+                TextView date = (TextView) getDialog().findViewById(R.id.gdate);
 
                 String totalUnits = units.getText().toString();
                 String currentgpa = current.getText().toString();
@@ -69,13 +70,18 @@ public class ProfileFragment extends DialogFragment {
                 Calendar c = Calendar.getInstance();
                 long currentTime = c.getTime().getTime();
                 long days = (calendar.getTime().getTime() - currentTime) / (24 * 60 * 60 * 1000);
-                String daysLeft = String.valueOf(days);
+                String daysLeft = String.valueOf(days + 1);
 
                 if(days < 0){
                     daysLeft = "ended";
                     text.setTextColor(getResources().getColor(R.color.light_pink));
                     text.setTypeface(null, Typeface.BOLD);
                 }
+                else{
+                    text.setTextColor(getResources().getColor(R.color.primary_dark_material_dark));
+                    text.setTypeface(null, Typeface.NORMAL);
+                }
+
                 text.setText(daysLeft);
             }
         });
@@ -87,9 +93,8 @@ public class ProfileFragment extends DialogFragment {
             }
         });
 
-        final EditText date = (EditText) v.findViewById(R.id.gradDate);
-        date.setInputType(InputType.TYPE_NULL);
-        date.setFocusable(false);
+        final ImageView date = (ImageView) v.findViewById(R.id.gradDate);
+        final TextView dateText = (TextView) v.findViewById(R.id.gdate);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +105,7 @@ public class ProfileFragment extends DialogFragment {
 
                 DatePickerDialog mDatePicker = new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int year, int month, int day) {
-                        date.setText(String.format("%02d", month + 1) + "/" + String.format("%02d", day) + "/" + String.valueOf(year));
+                        dateText.setText(String.format("%02d", month + 1) + "/" + String.format("%02d", day) + "/" + String.valueOf(year));
                         calendar.set(year, month, day);
                     }
                 },mYear, mMonth, mDay);

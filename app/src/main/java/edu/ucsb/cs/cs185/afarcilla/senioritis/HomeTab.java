@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -81,7 +80,7 @@ public class HomeTab extends Fragment {
 
         //calculate days left
         long days = (gradDate - current) / (24 * 60 * 60 * 1000);
-        String daysLeft = String.valueOf(days);
+        String daysLeft = String.valueOf(days+1);
 
         //set textView
         TextView text = (TextView) v.findViewById(R.id.daysleft);
