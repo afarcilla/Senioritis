@@ -41,6 +41,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(CardHolder holder, int position) {
+        final int p = position;
         String className = mDataset.get(position).className;
         String targetGrade = mDataset.get(position).desiredGrade;
 
@@ -54,6 +55,24 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.CardHold
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent touchIntent = new Intent(context, ClassActivity.class);
+                String className = mDataset.get(p).className;
+                Float units = mDataset.get(p).units;
+                String desiredGrade = mDataset.get(p).desiredGrade;
+                Float homeworkPercent = mDataset.get(p).homeworkPercent;
+                Float midTermPercent = mDataset.get(p).midTermPercent;
+                Float finalPercent = mDataset.get(p).finalPercent;
+                Float projectsPercent = mDataset.get(p).projectsPercent;
+                Float otherPercent = mDataset.get(p).otherPercent;
+
+                touchIntent.putExtra("className", className);
+                touchIntent.putExtra("units", units);
+                touchIntent.putExtra("desiredGrade", desiredGrade);
+                touchIntent.putExtra("homeworkPercent", homeworkPercent);
+                touchIntent.putExtra("midtermPercent", midTermPercent);
+                touchIntent.putExtra("finalPercent", finalPercent);
+                touchIntent.putExtra("projectsPercent", projectsPercent);
+                touchIntent.putExtra("otherPercent", otherPercent);
+
                 context.startActivity(touchIntent);
             }});
 
