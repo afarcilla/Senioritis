@@ -42,8 +42,8 @@ public class ClassRecycleAdapter extends RecyclerView.Adapter<ClassRecycleAdapte
         String AssignmentName = mDataset.get(position).assignmentTitle;
         Integer grade = mDataset.get(position).score;
 
-        TextView assignment = (TextView) holder.mView.findViewById(R.id.gradeNumber);
-        TextView assignmentGrade = (TextView) holder.mView.findViewById(R.id.AssignmentTitle);
+        TextView assignmentGrade = (TextView) holder.mView.findViewById(R.id.gradeNumber);
+        TextView assignment = (TextView) holder.mView.findViewById(R.id.AssignmentTitle);
         assignment.setText(AssignmentName);
         assignmentGrade.setText(Integer.toString(grade));
 
