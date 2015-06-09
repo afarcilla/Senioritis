@@ -32,11 +32,13 @@ public class HomeTab extends Fragment {
         setDaysLeftView(v);
 
         final List<String> myDataset = new ArrayList<>();
-        myDataset.add("test");
-        myDataset.add("test");
-        myDataset.add("test");
-        myDataset.add("test");
-        myDataset.add("test");
+
+        SharedPreferences preferences = getActivity().getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        int numClasses = preferences.getInt("classNum", 0);
+        for(int i = 0; i < numClasses; i++){
+            myDataset.add("class");
+        }
 
         if(!myDataset.isEmpty()) {
             TextView emptyText = (TextView) v.findViewById(R.id.empty);
